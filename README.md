@@ -1,4 +1,7 @@
+#Porygon
+
 A Discord bot to help with competitive Pokémon
+
 Created by @mostly fireproof#2095
 
 Commands:
