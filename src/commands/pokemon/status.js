@@ -5,16 +5,16 @@ const statuses = require('../../data/statuses.js');
 module.exports = class SayCommand extends Command {
     constructor(client) {
         super(client, {
-            name: 'ability',
-            aliases: ['a'],
+            name: 'status',
+            aliases: ['s'],
             group: 'pokemon',
-            memberName: 'ability',
-            description: 'Replies with information on that ability.',
-            examples: ['ability pressure'],
+            memberName: 'status',
+            description: 'Replies with information on that status.',
+            examples: ['status burn'],
             args: [
                 {
                     key: 'text',
-                    prompt: 'On which ability would you like information?',
+                    prompt: 'On which status would you like information?',
                     type: 'string'
                 }
             ]
@@ -24,10 +24,10 @@ module.exports = class SayCommand extends Command {
     run(msg, {text}) {
 
         return msg.say(stripIndents`
-			**Move Details**
+			**Status Details**
 		    • Name: ${statuses.BattleStatuses[text].name}
             • Description: ${statuses.BattleStatuses[text].desc}
             • Effect Type: ${statuses.BattleStatuses[text].effectType}
-		`); 
+		`);
     }
 };
