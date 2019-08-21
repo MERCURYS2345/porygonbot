@@ -6,9 +6,9 @@ Created by @mostly fireproof#2095
 
 # Commands:
 
-* poke - gives information on a specific Pokémon, needs to be finished
-* move - to be implemented
-* everything else - to be implemented
+* poke (p) - gives information on a specific Pokémon
+* move (m) - gives information on a move
+* ability (a) - information on an ability
 
 Lots of code from here:
 Commando sample code
@@ -22,6 +22,7 @@ https://github.com/Zarel/Pokemon-Showdown/blob/master/data/
 
 # Requirements:
 
+* node
 * discord.js
 * discord.js-commando
 
@@ -29,9 +30,5 @@ https://github.com/Zarel/Pokemon-Showdown/blob/master/data/
 
 * Download the repository
 * Change token in `config.json` to the key of your Bot
+* Invite the bot to your server
 * run `node src/index.sj`
-* To be written
-
-
-I probably need to change how statusesRaw.js is handled, as I don't need all
-of the data it contains
