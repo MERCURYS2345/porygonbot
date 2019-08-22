@@ -24,7 +24,7 @@ module.exports = class SayCommand extends Command {
     run(msg, {text}) {
 
         return msg.say(stripIndents`
-			**Move Details**
+			**Ability Details**
 		    • Name: ${abilities.BattleAbilities[text].name}
             • Description: ${abilities.BattleAbilities[text].desc}
             • Rating: ${abilities.BattleAbilities[text].rating}
