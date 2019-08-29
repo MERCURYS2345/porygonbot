@@ -5,101 +5,21 @@ let BattleStatuses = {
 		name: 'burn',
 		effectType: 'Status',
         desc: 'Damages the target for # - # turns'
-		},
 	},
-	par: {
-		name: 'par',
-		id: 'par',
-		num: 0,
+	paralyze: {
+		name: 'paralyze',
 		effectType: 'Status',
-		onStart(target, source, sourceEffect) {
-			if (sourceEffect && sourceEffect.effectType === 'Ability') {
-				this.add('-status', target, 'par', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
-			} else {
-				this.add('-status', target, 'par');
-			}
-		},
-		onModifySpe(spe, pokemon) {
-			if (!pokemon.hasAbility('quickfeet')) {
-				return this.chainModify(0.5);
-			}
-		},
-		onBeforeMovePriority: 1,
-		onBeforeMove(pokemon) {
-			if (this.randomChance(1, 4)) {
-				this.add('cant', pokemon, 'par');
-				return false;
-			}
-		},
+		desc: 'Slows the target and has a chance to prevent attacks'
 	},
-	slp: {
-		name: 'slp',
-		id: 'slp',
-		num: 0,
+	sleep: {
+		name: 'sleep',
 		effectType: 'Status',
-		onStart(target, source, sourceEffect) {
-			if (sourceEffect && sourceEffect.effectType === 'Ability') {
-				this.add('-status', target, 'slp', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
-			} else {
-				this.add('-status', target, 'slp');
-			}
-			// 1-3 turns
-			this.effectData.startTime = this.random(2, 5);
-			this.effectData.time = this.effectData.startTime;
-		},
-		onBeforeMovePriority: 10,
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.hasAbility('earlybird')) {
-				pokemon.statusData.time--;
-			}
-			pokemon.statusData.time--;
-			if (pokemon.statusData.time <= 0) {
-				pokemon.cureStatus();
-				return;
-			}
-			this.add('cant', pokemon, 'slp');
-			if (move.sleepUsable) {
-				return;
-			}
-			return false;
-		},
+		desc: 'Prevents almost all moves for 2 - 5 moves. Prevented by Early Bird.'
 	},
-	frz: {
-		name: 'frz',
-		id: 'frz',
-		num: 0,
+	freeze: {
+		name: 'freeze',
 		effectType: 'Status',
-		onStart(target, source, sourceEffect) {
-			if (sourceEffect && sourceEffect.effectType === 'Ability') {
-				this.add('-status', target, 'frz', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
-			} else {
-				this.add('-status', target, 'frz');
-			}
-			if (target.template.species === 'Shaymin-Sky' && target.baseTemplate.baseSpecies === 'Shaymin') {
-				target.formeChange('Shaymin', this.effect, true);
-			}
-		},
-		onBeforeMovePriority: 10,
-		onBeforeMove(pokemon, target, move) {
-			if (move.flags['defrost']) return;
-			if (this.randomChance(1, 5)) {
-				pokemon.cureStatus();
-				return;
-			}
-			this.add('cant', pokemon, 'frz');
-			return false;
-		},
-		onModifyMove(move, pokemon) {
-			if (move.flags['defrost']) {
-				this.add('-curestatus', pokemon, 'frz', '[from] move: ' + move);
-				pokemon.setStatus('');
-			}
-		},
-		onHit(target, source, move) {
-			if (move.thawsTarget || move.type === 'Fire' && move.category !== 'Status') {
-				target.cureStatus();
-			}
-		},
+		desc: 'Prevents all moves for a few turns. Thaws out if hit by a Fire type move.'
 	},
 	psn: {
 		name: 'psn',
