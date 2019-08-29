@@ -6,11 +6,6 @@ let BattleStatuses = {
 		effectType: 'Status',
         desc: 'Damages the target for # - # turns'
 		},
-		// Damage reduction is handled directly in the sim/battle.js damage function
-		onResidualOrder: 9,
-		onResidual(pokemon) {
-			this.damage(pokemon.maxhp / 16);
-		},
 	},
 	par: {
 		name: 'par',
