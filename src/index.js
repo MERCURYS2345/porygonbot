@@ -9,7 +9,9 @@ const client = new CommandoClient({
 const activitiesList = [
     "with the p:help command.",
     "with a Pikachu",
+    "with the p:help command.",
     "with some code",
+    "with the p:help command.",
     "with JavaScript"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
