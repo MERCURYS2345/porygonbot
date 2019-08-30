@@ -6,6 +6,12 @@ const client = new CommandoClient({
     owner: '99327125340831744', //mostly fireproof#2095
     disableEveryone: true
 });
+const activitiesList = [
+    "with the p:help command.",
+    "with a Pikachu",
+    "with some code",
+    "with JavaScript"
+    ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.registry
     .registerDefaultTypes()
@@ -19,7 +25,10 @@ client.registry
 
 client.on('ready', () => {
     console.log('Logged in!');
-    client.user.setActivity('p:help');
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (activitiesList.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
+        client.user.setActivity(activitiesList[index]); // sets bot's activities to one of the phrases in the arraylist.
+    }, 10000); // Runs this every 10 seconds.
 });
 
 client.login(config.token);
