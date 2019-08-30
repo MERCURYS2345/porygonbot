@@ -9,26 +9,31 @@ Created by @mostly fireproof#2095
 * poke (p) - gives information on a specific Pokémon
 * move (m) - gives information on a move
 * ability (a) - information on an ability
-
-Lots of code from here:
-Commando sample code
-https://github.com/discordjs/Commando/tree/master/test
-
-More Commando stuff
-https://discordjs.guide/
-
-Data from Pokémon Showdown
-https://github.com/Zarel/Pokemon-Showdown/blob/master/data/
+* status (s) - information on a status effect
 
 # Requirements:
 
-* node
-* discord.js
-* discord.js-commando
+* [node](https://nodejs.org/)
+* [discord.js](https://discord.js.org/)
+* [discord.js-commando](https://github.com/discordjs/Commando)
 
 # Instructions:
 
 * Download the repository
 * Change token in `config.json` to the key of your Bot
 * Invite the bot to your server
-* run `node src/index.sj`
+* run `node src/index.js`
+
+# Credits:
+
+Commando sample code:
+https://github.com/discordjs/Commando/tree/master/test
+
+More Commando stuff:
+https://discordjs.guide/
+
+Data from Pokémon Showdown:
+https://github.com/Zarel/Pokemon-Showdown/blob/master/data/
+
+Changing the status:
+https://stackoverflow.com/questions/51180927/how-do-i-make-my-discord-bot-change-status-every-10-seconds
