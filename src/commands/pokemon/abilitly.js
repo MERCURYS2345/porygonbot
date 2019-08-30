@@ -27,6 +27,6 @@ module.exports = class SayCommand extends Command {
 		    • Name: ${abilities.BattleAbilities[text].name}
             • Description: ${abilities.BattleAbilities[text].desc}
             • Rating: ${abilities.BattleAbilities[text].rating}
-		`);} // the rating part might break things, I haven't tested it yet
+		`); // the rating part might break things, I haven't tested it yet
     }
 };
