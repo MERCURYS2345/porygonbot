@@ -22,7 +22,7 @@ module.exports = class SayCommand extends Command {
     }
 
     run(msg, {text}) {
-        if text='help'{
+        if text=='help'{
             return msg.say(stripIndents`
                 Ratings and how they work:
 
