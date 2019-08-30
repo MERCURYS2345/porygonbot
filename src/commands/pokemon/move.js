@@ -22,18 +22,18 @@ module.exports = class SayCommand extends Command {
     }
 
     run(msg, {text}) {
-
+        var textSmall = text.toLowerCase();
         return msg.say(stripIndents`
 			**Move Details**
-		    • Name: ${moves.BattleMovedex[text].name}
-            • Category: ${moves.BattleMovedex[text].category}
-            • Description: ${moves.BattleMovedex[text].desc}
-            • Type: ${moves.BattleMovedex[text].type}
-            • Power: ${moves.BattleMovedex[text].basePower}
-            • Accuracy: ${moves.BattleMovedex[text].accuracy}
-            • Priority: ${moves.BattleMovedex[text].priority}
-            • PP: ${moves.BattleMovedex[text].pp}
-            • Contest Type: ${moves.BattleMovedex[text].contestType}
+		    • Name: ${moves.BattleMovedex[textSmall].name}
+            • Category: ${moves.BattleMovedex[textSmall].category}
+            • Description: ${moves.BattleMovedex[textSmall].desc}
+            • Type: ${moves.BattleMovedex[textSmall].type}
+            • Power: ${moves.BattleMovedex[textSmall].basePower}
+            • Accuracy: ${moves.BattleMovedex[textSmall].accuracy}
+            • Priority: ${moves.BattleMovedex[textSmall].priority}
+            • PP: ${moves.BattleMovedex[textSmall].pp}
+            • Contest Type: ${moves.BattleMovedex[textSmall].contestType}
 		`);
     }
 };
