@@ -19,7 +19,7 @@ module.exports = class SayCommand extends Command {
     }
 
     run(msg, {text}) {
-
-        return msg.say(text + ' - still needs proper implementation');
+        var textSmall = text.toLowerCase();
+        return msg.say(textSmall + ' - still needs proper implementation');
     }
 };

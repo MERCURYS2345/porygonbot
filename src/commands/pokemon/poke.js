@@ -23,27 +23,22 @@ module.exports = class SayCommand extends Command {
     }
 
     run(msg, {text}) {
-
-        //search
-        // dex.BattlePokedex[text].yeet
-        // + ': Number: ' dex.BattlePokedex[text].num
-        // dex.BattlePokedex[text].species
-
+        var textSmall = text.toLowerCase();
         return msg.say(stripIndents`
             **Pokémon Details**
-		    • Name: ${dex.BattlePokedex[text].species}
-            • Number: ${dex.BattlePokedex[text].num}
+		    • Name: ${dex.BattlePokedex[textSmall].species}
+            • Number: ${dex.BattlePokedex[textSmall].num}
             `
             + '\n'
             + commaListsAnd`
-            • Type: ${dex.BattlePokedex[text].types}
-            • Egg Groups: ${dex.BattlePokedex[text].eggGroups}
+            • Type: ${dex.BattlePokedex[textSmall].types}
+            • Egg Groups: ${dex.BattlePokedex[textSmall].eggGroups}
             `
             + '\n'
             + stripIndents
             `
-            • Height: ${dex.BattlePokedex[text].heightm}
-            • Weight: ${dex.BattlePokedex[text].weightkg}
+            • Height: ${dex.BattlePokedex[textSmall].heightm}
+            • Weight: ${dex.BattlePokedex[textSmall].weightkg}
 
         `);
     }

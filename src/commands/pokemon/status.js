@@ -22,12 +22,12 @@ module.exports = class SayCommand extends Command {
     }
 
     run(msg, {text}) {
-
+        var textSmall = text.toLowerCase();
         return msg.say(stripIndents`
 			**Status Details**
-		    • Name: ${statuses.BattleStatuses[text].name}
-            • Description: ${statuses.BattleStatuses[text].desc}
-            • Effect Type: ${statuses.BattleStatuses[text].effectType}
+		    • Name: ${statuses.BattleStatuses[textSmall].name}
+            • Description: ${statuses.BattleStatuses[textSmall].desc}
+            • Effect Type: ${statuses.BattleStatuses[textSmall].effectType}
 		`);
     }
 };

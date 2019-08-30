@@ -22,11 +22,12 @@ module.exports = class SayCommand extends Command {
     }
 
     run(msg, {text}) {
-            return msg.say(stripIndents`
+        var textSmall = text.toLowerCase();
+        return msg.say(stripIndents`
 			**Ability Details**
-		    • Name: ${abilities.BattleAbilities[text].name}
-            • Description: ${abilities.BattleAbilities[text].desc}
-            • Rating: ${abilities.BattleAbilities[text].rating}
-		`); // the rating part might break things, I haven't tested it yet
+		    • Name: ${abilities.BattleAbilities[textSmall].name}
+            • Description: ${abilities.BattleAbilities[textSmall].desc}
+            • Rating: ${abilities.BattleAbilities[textSmall].rating}
+		`);
     }
 };
