@@ -4,6 +4,8 @@ A Discord bot to help with competitive Pokémon
 
 Created by @mostly fireproof#2095
 
+[Invite the bot to your server](https://discordapp.com/oauth2/authorize?client_id=311586627975774219&scope=bot&permissions=52224)
+
 # Commands:
 
 * poke (p) - gives information on a specific Pokémon
