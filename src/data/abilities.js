@@ -4163,7 +4163,7 @@ let BattleAbilities = {
 		rating: 3.5,
 		num: -4,
 	},
-	"help": {
+	/*"help": {
 		desc: "Ratings and how they work:
 
 		-2: Extremely detrimental
@@ -4199,7 +4199,7 @@ let BattleAbilities = {
 			ex. Desolate Land, Shadow Tag",
 		name: "help message",
 		rating: 10
-	}
+	}*/
 };
 
 exports.BattleAbilities = BattleAbilities;
